@@ -52,7 +52,13 @@ resource "aws_iam_policy" "ec2_policy" {
         ]
         Effect   = "Allow"
         Resource = "*"
+      },
+      {
+        Action = "rds-db:connect",
+        Effect = "Allow",
+        Resource = "arn:aws:rds-db:*:*:dbuser/*/*"
       }
+
     ]
   })
 }
